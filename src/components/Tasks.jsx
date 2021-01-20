@@ -1,14 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
-import TaskBuilder from "./TaskBuilder";
 
 const Lists = (props) => {
   return (
     <div>
-      {props.lists.map(list => (
-        <div key={list.id}>
-          <h3>{list.title}</h3>
-          <TaskBuilder />
+      {props.tasks.map(task => (
+        <div key={task.id}>
+          <h4>{task.title}</h4>
+          <button>{task.complete ? 'Completed' : 'Uncompleted'}</button>
         </div>
       ))}
     </div>
@@ -16,7 +15,7 @@ const Lists = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  lists: state.lists,
+  tasks: state.tasks,
   filter: state.visibility
 });
 

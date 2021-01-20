@@ -1,6 +1,7 @@
 const initialState = {
   visibility: "ALL",
-  lists: []
+  lists: [],
+  tasks: []
 };
 
 function reducer(state = initialState, action) {
@@ -13,6 +14,18 @@ function reducer(state = initialState, action) {
           {
             title: action.payload,
             id: action.id
+          }
+        ]
+      };
+    case "ADD_TASK":
+      return {
+        ...state,
+        tasks: [
+          ...state.tasks,
+          {
+            title: action.payload,
+            id: action.id,
+            complete: action.complete
           }
         ]
       };
