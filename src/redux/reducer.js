@@ -1,13 +1,17 @@
-function reducer(state, action) {
+const initialState = {
+  visibility: "ALL",
+  lists: []
+};
+
+function reducer(state = initialState, action) {
   switch(action.type) {
-    case 'ADD_TODO':
+    case "ADD_LIST":
       return {
         ...state,
-        todos: [
-          ...state.todos,
+        lists: [
+          ...state.lists,
           {
-            text: action.payload,
-            completed: action.completed || false,
+            title: action.payload,
             id: action.id
           }
         ]
@@ -15,6 +19,6 @@ function reducer(state, action) {
     default:
       return state;
   }
-}
+};
 
-export default reducer
+export default reducer;
