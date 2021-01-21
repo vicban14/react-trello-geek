@@ -7,8 +7,8 @@ import Tasks from "./Tasks";
 const Lists = (props) => {
   return (
     <div className="listContainer">
-      {props.lists.map(list => (
-        <div className="list" key={list.id}>
+      {props.lists.map((list, i) => (
+        <div className="list" id={i} key={list.id} data-category={list.category}>
           <div>
             <h3>{list.title}</h3>
             <button className="deleteButton" onClick={(e) => props.delete(list.id)}>Delete</button>

@@ -11,7 +11,7 @@ const TaskBuilder = (props) => {
 
   return (
     <>
-      <input id="taskBuilder" type="text" placeholder="Add a task" onKeyUp={(e) => onKeyUpHandle(e)} />
+      <input className="taskBuilder" type="text" placeholder="Add a task" onKeyUp={(e) => onKeyUpHandle(e)} />
     </>
   );
 };
