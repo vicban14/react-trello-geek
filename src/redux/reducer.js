@@ -1,6 +1,18 @@
 const initialState = {
   visibility: "ALL",
-  lists: [],
+  lists: [{
+    title: 'to do',
+    id: Date.now(),
+    category: 'to do'
+  }, {
+    title: 'in progress',
+    id: Date.now(),
+    category: 'in progress'
+  }, {
+    title: 'done',
+    id: Date.now(),
+    category: 'done'
+  }],
   tasks: []
 };
 

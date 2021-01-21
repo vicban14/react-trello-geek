@@ -2,17 +2,18 @@ import React from "react";
 import {connect} from "react-redux";
 
 const Lists = (props) => {
+  function filterTasks(tasks = [], filter) {
+    return tasks.filter(task => task.category === filter)
+}
+
   return (
     <div>
-      {console.log(props.tasks)}
-      {props.tasks.map(task => task.category === props.listCategory
-      ? (
+      {filterTasks(props.tasks, props.listCategory).map(task => (
         <div className="task" key={task.id}>
           <h4>{task.title}</h4>
-          <button>{task.complete ? 'Completed' : 'Uncompleted'}</button>
+          <button className="deleteButton">Delete</button>
         </div>
-      )
-      : null )}
+      ))}
     </div>
   );
 };

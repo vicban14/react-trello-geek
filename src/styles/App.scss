@@ -26,6 +26,8 @@ section {
 
 .listContainer {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 #listBuilder {
@@ -44,10 +46,10 @@ section {
 }
 
 .list {
-  border-radius: 0.5vh;
+  border-radius: 0.5em;
   width: 15em;
-  padding: 2vh;
-  margin: 0vh 2.5vh;
+  padding: 1em;
+  margin: 1em 1.5em;
   background-color: $contrast;
 }
 
@@ -57,17 +59,44 @@ section {
   color: $dark-solid;
 }
 
-.list > input {
-  background-color: $mid-solid;
+#taskBuilder {
+  background-color: $dark-solid;
   color: $light;
   border: 0;
   height: 2em;
-
-  border-radius: 1vh;
+  padding-left: 1em;
+  border-radius: 0.5em;
   outline: none;
 
   &::placeholder {
-    color: $light;
-    padding-left: 1em;
+    color: $contrast;
   }
+}
+
+.task {
+  background-color: $mid-solid;
+  border-radius: 0.5em;
+  color: $light;
+  padding: 0.5em;
+  margin: 1em 0em;
+  display: grid;
+  grid-template-columns: 12em;
+  grid-template-rows: 70% 30%;
+  justify-content: space-between;
+}
+
+.task > h4 {
+  word-wrap: break-word;
+  font-size: medium;
+  padding: 0.3em;
+}
+
+.deleteButton {
+  background: none;
+  border: 0;
+  color: inherit;
+  width: fit-content;
+  outline: none;
+  display: flex;
+  justify-self: end;
 }
