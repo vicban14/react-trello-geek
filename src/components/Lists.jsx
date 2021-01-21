@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import { deleteListAction } from "../redux/actions";
 import TaskBuilder from "./TaskBuilder";
 import Tasks from "./Tasks";
 
@@ -8,7 +9,10 @@ const Lists = (props) => {
     <div className="listContainer">
       {props.lists.map(list => (
         <div className="list" key={list.id}>
-          <h3>{list.title}</h3>
+          <div>
+            <h3>{list.title}</h3>
+            <button className="deleteButton" onClick={(e) => props.delete(list.id)}>Delete</button>
+          </div>
           <TaskBuilder listCategory={list.category} />
           <Tasks listCategory={list.category} />
         </div>
@@ -22,6 +26,10 @@ const mapStateToProps = (state) => ({
   filter: state.visibility
 });
 
-const connected = connect(mapStateToProps, null)(Lists);
+const mapDispatchToProps = (dispatch) => ({
+  delete: deleteListAction(dispatch)
+});
+
+const connected = connect(mapStateToProps, mapDispatchToProps)(Lists);
 
 export default connected;

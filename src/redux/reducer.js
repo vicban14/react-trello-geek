@@ -2,15 +2,15 @@ const initialState = {
   visibility: "ALL",
   lists: [{
     title: 'to do',
-    id: Date.now(),
+    id: 1,
     category: 'to do'
   }, {
     title: 'in progress',
-    id: Date.now(),
+    id: 2,
     category: 'in progress'
   }, {
     title: 'done',
-    id: Date.now(),
+    id: 3,
     category: 'done'
   }],
   tasks: []
@@ -30,6 +30,11 @@ function reducer(state = initialState, action) {
           }
         ]
       };
+    case "DELETE_LIST":
+      return {
+        ...state,
+        lists: state.lists.filter(list => list.id !== action.payload)
+      };
     case "ADD_TASK":
       return {
         ...state,
@@ -42,6 +47,11 @@ function reducer(state = initialState, action) {
             category: action.category
           }
         ]
+      };
+    case "DELETE_TASK":
+      return {
+        ...state,
+        tasks: state.tasks.filter(task => task.id !== action.payload)
       };
     default:
       return state;
