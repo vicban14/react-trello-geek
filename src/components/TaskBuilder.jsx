@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 const TaskBuilder = (props) => {
   function onKeyUpHandle(ev) {
     if (ev.keyCode === 13  && ev.target.value.trim()) {
-      props.addTask(ev.target.value.trim())
+      props.addTask(ev.target.value.trim(), props.listCategory)
       ev.target.value = ""
     }
   };
@@ -17,12 +17,13 @@ const TaskBuilder = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addTask: (text) =>
+  addTask: (text, category) =>
     dispatch({
       type:  "ADD_TASK",
       payload: text,
       id: Date.now(),
-      complete: false
+      complete: false,
+      category: category
     })
 });
 

@@ -1,14 +1,16 @@
 import React from "react";
 import {connect} from "react-redux";
 import TaskBuilder from "./TaskBuilder";
+import Tasks from "./Tasks";
 
 const Lists = (props) => {
   return (
-    <div>
+    <div className="listContainer">
       {props.lists.map(list => (
-        <div key={list.id}>
+        <div className="list" key={list.id}>
           <h3>{list.title}</h3>
-          <TaskBuilder />
+          <TaskBuilder listCategory={list.category} />
+          <Tasks listCategory={list.category} />
         </div>
       ))}
     </div>

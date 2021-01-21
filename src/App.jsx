@@ -1,15 +1,15 @@
-import "./App.css";
+import "./styles/App.scss";
 import ListBuilder from "./components/ListBuilder";
 import Lists from "./components/Lists";
-import Tasks from "./components/Tasks"
+import HeaderBar from "./components/HeaderBar";
 
 function App() {
   return (
-    <div className="App">
+    <section>
+      <HeaderBar />
       <ListBuilder />
       <Lists />
-      <Tasks />
-    </div>
+    </section>
   );
 };
 

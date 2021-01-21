@@ -1,0 +1,73 @@
+@import './Colors.scss';
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+$window-height: 100vh;
+$window-width: 100vw;
+
+section {
+  background-image: url('../styles/images/background.svg');
+  width: $window-width;
+  height: $window-height;
+  background-size: cover;
+}
+
+.headerBar {
+  background-color: $mid-solid;
+  color: white;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listContainer {
+  display: flex;
+}
+
+#listBuilder {
+  background-color: $contrast;
+  color: $dark-solid;
+  border: 0;
+  height: 3em;
+  padding-left: 1em;
+  border-radius: 1vh;
+  outline: none;
+  margin: 2em;
+
+  &::placeholder {
+    color: $dark-solid;
+  }
+}
+
+.list {
+  border-radius: 0.5vh;
+  width: 15em;
+  padding: 2vh;
+  margin: 0vh 2.5vh;
+  background-color: $contrast;
+}
+
+.list > h3 {
+  word-wrap: break-word;
+  margin-bottom: 0.8em;
+  color: $dark-solid;
+}
+
+.list > input {
+  background-color: $mid-solid;
+  color: $light;
+  border: 0;
+  height: 2em;
+
+  border-radius: 1vh;
+  outline: none;
+
+  &::placeholder {
+    color: $light;
+    padding-left: 1em;
+  }
+}

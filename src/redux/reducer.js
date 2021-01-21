@@ -13,7 +13,8 @@ function reducer(state = initialState, action) {
           ...state.lists,
           {
             title: action.payload,
-            id: action.id
+            id: action.id,
+            category: action.payload
           }
         ]
       };
@@ -25,7 +26,8 @@ function reducer(state = initialState, action) {
           {
             title: action.payload,
             id: action.id,
-            complete: action.complete
+            complete: action.complete,
+            category: action.category
           }
         ]
       };

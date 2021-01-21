@@ -11,7 +11,7 @@ const ListBuilder = (props) => {
 
   return (
     <>
-      <input type="text" placeholder="Write the name list" onKeyUp={(e) => onKeyUpHandle(e)} />
+      <input type="text" placeholder="Create a list" onKeyUp={(e) => onKeyUpHandle(e)} id="listBuilder" />
     </>
   );
 };
