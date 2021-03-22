@@ -22,16 +22,6 @@ npm run start
 
 Automatically, the default browser will be opened to view it in [http://localhost:3000](http://localhost:3000).
 
-### Create a Build
-
-In order to build the app for production you should run:
-
-```bash
-npm run build
-```
-
-The code will be saved in the build folder.
-
 ## Information App
 
 This application allows you to:
@@ -39,3 +29,11 @@ This application allows you to:
 - Create lists and tasks.
 - Delete lists and tasks.
 - Organize tasks dragging them between any of the lists.
+
+![Screenshot](./public/trello-sample.png)
+
+## Future Improvements
+
+1. Use react drag and drop
+2. Add CRUD and connect with database.
+3. Save tasks and lists in user database.
